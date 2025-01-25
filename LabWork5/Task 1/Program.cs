@@ -13,7 +13,7 @@ Console.WriteLine();
 
 applicant1.FullName = "  ";
 applicant2.ClassNumber = 12;
-applicant2.GPA = -12.0;
+applicant2.AverageScore = -12.0;
 
 applicant1.Print();
 applicant2.Print();
@@ -21,7 +21,7 @@ Console.WriteLine();
 
 applicant1.FullName = "Тестов Тест Тестирович";
 applicant2.ClassNumber = 11;
-applicant2.GPA = 5;
+applicant2.AverageScore = 5;
 
 applicant1.Print();
 applicant2.Print();
@@ -39,9 +39,9 @@ foreach (var applicant in applicants)
         applicant.Print();
 
 Console.Write("\nВведите средний бал: ");
-double gpa = Int32.Parse(Console.ReadLine());
+double averageScore = Int32.Parse(Console.ReadLine());
 
 Console.WriteLine("\nб)  Абитуриенты со средним баллом выше заданного:");
 foreach (var applicant in applicants)
-    if (applicant.GPA > gpa)
+    if (applicant.AverageScore > averageScore)
         applicant.Print();

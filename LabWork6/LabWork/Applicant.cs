@@ -45,6 +45,35 @@
         }
     }
 
+    public object this[string index]
+    {
+        get
+        {
+            switch (index)
+            {
+                case "ФИО":
+                    return _fullName;
+                case "Класс":
+                    return _classNumber;
+                case "Средний балл":
+                    return _averageScore;
+                default:
+                    return null;
+            }
+        }
+    }
+
+    public char this[int index]
+    {
+        get
+        {
+            if (index >= 0 && index < _fullName.Length && _fullName != null)
+                return _fullName[index];
+
+            return '\0';
+        }
+    }
+
     public void Print()
         => Console.WriteLine($"Абитуриент: {_fullName} закончил {_classNumber} классов со средним балом {_averageScore}");
 }
