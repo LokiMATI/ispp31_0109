@@ -1,7 +1,7 @@
 ﻿// Задание 1
 
 Applicant applicant1 = new();
-Applicant applicant2 = new("Матигоров Никита Иванови", 9, 4.54);
+Applicant applicant2 = new("Матигоров Никита Иванович", 9, 4.54);
 
 // Задание 2
 
@@ -28,7 +28,7 @@ applicant2.Print();
 
 Applicant[] applicants = {
     new("Приветов Привет Приветович", 11, 4.89),
-    new("Запоздалов Виктор Проспатович", 8, 3.66),
+    new("Запоздалов Виктор Проспатович", 8, 4.66),                  //массив
     applicant1,
     applicant2
 };
@@ -39,7 +39,7 @@ foreach (var applicant in applicants)
         applicant.Print();
 
 Console.Write("\nВведите средний бал: ");
-double averageScore = Int32.Parse(Console.ReadLine());
+double averageScore = Double.Parse(Console.ReadLine());                 //Doubl/par строк знач дел вещ
 
 Console.WriteLine("\nб)  Абитуриенты со средним баллом выше заданного:");
 foreach (var applicant in applicants)

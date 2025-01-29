@@ -16,7 +16,8 @@ public class Applicant
         _classNumber = classNumber;
         _averageScore = averageScore;
     }
-    public object this[string index]
+
+    public object? this[string index]
     {
         get
         {
@@ -38,7 +39,7 @@ public class Applicant
     {
         get
         {
-            if (index >= 0 && index < _fullName.Length && _fullName != null)
+            if (index >= 0 && index < _fullName.Length)
                 return _fullName[index];
 
             return '\0';

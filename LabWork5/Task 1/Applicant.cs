@@ -1,8 +1,8 @@
 ﻿public class Applicant
 {
-    private string? _fullName;
-    private int _classNumber;
-    private double _averageScore;
+    private string? _fullName;                       //закрытое поле,строковое знач(null)
+    private int _classNumber;                        //закрытое поле,цел знач
+    private double _averageScore;                    //закрытое поле,вещ знач
 
     public Applicant() : this("Unknown", 1, 1)
     {
@@ -17,11 +17,11 @@
 
     public string FullName
     {
-        get => _fullName;
-        set
+        get => _fullName;                               //Возращает
+        set                                             //присваевает
         {
             if (value.Trim() != String.Empty)
-                _fullName = value;
+                _fullName = value.Trim();
         }
     }
 
@@ -40,11 +40,11 @@
         get => _averageScore;
         set
         {
-            if (value > 0 && value <= 5.0)
+            if (value > 0 && value <= 5.0)              //знач которое мы ввели
                 _averageScore = value;
         }
     }
 
-    public void Print()
+    public void Print()                     //выводит инф об объекте
         => Console.WriteLine($"Абитуриент: {_fullName} закончил {_classNumber} классов со средним балом {_averageScore}");
 }
