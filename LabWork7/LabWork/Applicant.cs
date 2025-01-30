@@ -27,25 +27,13 @@ public class Applicant
             AverageScore = Double.Round(applicant1.AverageScore + applicant2.AverageScore, 2)
         };
 
-    public static bool operator ==(Applicant applicant1, Applicant applicant2)
-    {
-        if (applicant1.FullName == applicant2.FullName 
+    public static bool operator ==(Applicant applicant1, Applicant applicant2) =>
+        applicant1.FullName == applicant2.FullName
             && applicant1.ClassNumber == applicant2.ClassNumber
-            && applicant1.AverageScore == applicant2.AverageScore)
-            return true;
+            && applicant1.AverageScore == applicant2.AverageScore;
 
-        return false;
-    }
-
-    public static bool operator !=(Applicant applicant1, Applicant applicant2)
-    {
-        if (applicant1.FullName != applicant2.FullName
-            && applicant1.ClassNumber != applicant2.ClassNumber
-            && applicant1.AverageScore != applicant2.AverageScore)
-            return true;
-
-        return false;
-    }
+    public static bool operator !=(Applicant applicant1, Applicant applicant2) =>
+        !(applicant1 == applicant2);
 
     public static bool operator true(Applicant applicant) =>
         applicant.AverageScore >= 0;
@@ -53,6 +41,6 @@ public class Applicant
     public static bool operator false(Applicant applicant) =>
         applicant.AverageScore < 0;
     public static bool operator !(Applicant applicant) =>
-        applicant.AverageScore >= 0;
+        !(applicant.AverageScore >= 0);
 }
 

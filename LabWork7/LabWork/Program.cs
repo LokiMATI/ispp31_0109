@@ -46,8 +46,8 @@
             if (applicant1)
                 Console.WriteLine(true);
 
-            if (!applicant1)
-                Console.WriteLine(true);
+            if (!applicant2)
+                Console.WriteLine(false);
         }
     }
 }
