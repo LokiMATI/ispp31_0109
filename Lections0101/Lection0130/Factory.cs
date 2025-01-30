@@ -35,4 +35,17 @@
     {
         return factory.Income <= 0;
     }
+
+    public static bool operator ==(Factory factory , Factory other)
+    {
+        if (ReferenceEquals(factory, other)) 
+            return true;
+        return factory.Name == other.Name && 
+            factory.Income == other.Income;
+    }
+
+    public static bool operator !=(Factory factory, Factory other)
+    {
+        return !(factory == other);
+    }
 }
