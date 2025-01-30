@@ -47,16 +47,12 @@ public class Applicant
         return false;
     }
 
-    public static bool operator true(Applicant applicant)
-    {
-        if (applicant.AverageScore >= 0) return true;
-        return false;
-    }
+    public static bool operator true(Applicant applicant) =>
+        applicant.AverageScore >= 0;
 
-    public static bool operator false(Applicant applicant)
-    {
-        if(applicant.AverageScore < 0) return true;
-        return false;
-    }
+    public static bool operator false(Applicant applicant) =>
+        applicant.AverageScore < 0;
+    public static bool operator !(Applicant applicant) =>
+        applicant.AverageScore >= 0;
 }
 
