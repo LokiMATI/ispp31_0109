@@ -28,11 +28,11 @@ class Program
     }
 
     // Задание 3
-    static int GetPerimeter(int side) =>
-        side * 4;
+    static double GetPerimeter(double side)
+        => side * 4;
 
-    static int GetPerimeter(int height, int width) =>
-        2 * (height + width);
+    static double GetPerimeter(double height, double width) 
+        => 2 * (height + width);
 
     // Задание 4
     static double Exponentiation(double x, int n)
