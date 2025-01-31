@@ -24,3 +24,8 @@ if (factory == Severodvinsk)
     Console.WriteLine("factory == Severodvinsk");
 else
     Console.WriteLine("factory != Severodvinsk");
+
+var random = new PowerfullRandom();
+Console.WriteLine(random.NextDouble(-7.1, 9));
+
+Console.WriteLine(factory);
