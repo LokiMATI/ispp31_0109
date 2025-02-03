@@ -1,8 +1,8 @@
 ﻿public class Applicant
 {
-    private string? _fullName;            
-    private int _classNumber;                       
-    private double _averageScore;                    
+    private string _fullName;
+    private int _classNumber;
+    private double _averageScore;
 
     public Applicant() : this("Unknown", 1, 1)
     {
