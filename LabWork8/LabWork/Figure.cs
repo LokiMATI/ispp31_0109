@@ -4,6 +4,4 @@
     public abstract double GetSquare();
     public abstract double GetPerimeter();
     public abstract void ShowInfo();
-    
 }
-
