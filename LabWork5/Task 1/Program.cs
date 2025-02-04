@@ -1,7 +1,8 @@
 ﻿// Задание 1
-Console.WriteLine("Задание 1");
 Applicant applicant1 = new();
 Applicant applicant2 = new("Матигоров Никита Иванович", 9, 4.54);
+applicant1.Print();
+applicant2.Print();
 
 // Задание 2
 Console.WriteLine("\nЗадание 2");
@@ -26,6 +27,8 @@ applicant2.AverageScore = 5;
 applicant1.Print();
 applicant2.Print();
 
+Console.WriteLine("\nЗадание 4");
+
 Applicant[] applicants = {
     new("Приветов Привет Приветович", 11, 4.89),
     new("Запоздалов Виктор Проспатович", 8, 4.66),
@@ -33,8 +36,9 @@ Applicant[] applicants = {
     applicant2
 };
 
-Console.WriteLine("\nа) Окончившие 11 классов:");
+Console.WriteLine("а) Окончившие 11 классов:");
 foreach (var applicant in applicants)
+
     if (applicant.ClassNumber == 11)
         applicant.Print();
 

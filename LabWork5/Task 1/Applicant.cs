@@ -30,7 +30,7 @@
         get => _classNumber;
         set
         {
-            if (value > 0 && value <= 11)
+            if (value >= 0 && value <= 11)
                 _classNumber = value;
         }
     }

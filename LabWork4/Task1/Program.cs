@@ -1,4 +1,4 @@
-﻿CoinChange(5);
+﻿CoinChange(18);
 
 // Задание 1
 static void CoinChange(int sum)
