@@ -1,6 +1,6 @@
 ﻿public interface IFigure
 {
-    string Name { get => "фигура"; }
+    string Name => "фигура";
     double GetSquare();
     double GetPerimeter();
     void ShowInfo();

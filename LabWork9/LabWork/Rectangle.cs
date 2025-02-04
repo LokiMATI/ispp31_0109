@@ -1,6 +1,6 @@
 ﻿public class Rectangle : IPrinter, IFigure
 {
-    string Name { get => "Прямоугольник"; }
+    public string Name => "Прямоугольник";
     public double Height { get; set; }
     public double Width { get; set; }
 
@@ -14,5 +14,5 @@
         => Console.WriteLine($"Высота: {Height}; Ширина: {Width}");
 
     public void ShowInfo()
-        => Console.WriteLine($"Высота: {Height}; Ширина: {Width}");
+        => Console.WriteLine($"{Name}; Высота: {Height}; Ширина: {Width}");
 }
