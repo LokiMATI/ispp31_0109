@@ -1,4 +1,5 @@
 ﻿// Задание 1
+Console.WriteLine("Задание 1");
 Applicant applicant = new()
 {
     FullName = "Иванов Иван Иванович",
@@ -14,39 +15,39 @@ Rectangle rectangle = new()
 
 applicant.Print();
 rectangle.Print();
-Console.WriteLine();
 
 // Задание 3
+Console.WriteLine("\nЗадание 3");
 IFigure figure = new Rectangle()
 {
     Height = 5,
     Width = 3
 };
 
-Console.WriteLine(figure.GetSquare());
-Console.WriteLine(figure.GetPerimeter());
+Console.WriteLine($"Площадь: {figure.GetSquare()}");
+Console.WriteLine($"Периметр: {figure.GetPerimeter()}");
 figure.ShowInfo();
-Console.WriteLine();
 
 // Задание 4
+Console.WriteLine("\nЗадание 4");
 IPrinter applicant1 = new Applicant()
-{
-    FullName = "Михалков Иван Иванович",
-    ClassNumber = 9,
-    AverageScore = 4.50
-};
+    {
+        FullName = "Михалков Иван Иванович",
+        ClassNumber = 9,
+        AverageScore = 4.50
+    };
 
 IPrinter rectangle1 = new Rectangle()
-{
-    Height = 10,
-    Width = 2
-};
+    {
+        Height = 10,
+        Width = 2
+    };
 
 applicant1.Print();
 rectangle1.Print();
 Console.WriteLine();
 
-IPrinter[] printerArray = [
+IPrinter[] printers = [
     applicant1,
     new Applicant()
     {
@@ -61,10 +62,10 @@ IPrinter[] printerArray = [
         Width = 5
     }];
 
-foreach (var item in printerArray)
+foreach (var printer in printers)
 {
-    if (item is IFigure Ifigure)
-        Console.WriteLine(Ifigure.Name);
+    if (printer is IFigure iFigure)
+        Console.WriteLine(iFigure.Name);
 
-    item.Print();
+    printer.Print();
 }

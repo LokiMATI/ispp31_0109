@@ -1,16 +1,16 @@
 ﻿// Задание 1
-
+Console.WriteLine("Задание 1");
 Applicant applicant1 = new();
 Applicant applicant2 = new("Матигоров Никита Иванович", 9, 4.54);
 
 // Задание 2
-
+Console.WriteLine("\nЗадание 2");
 applicant1.Print();
 applicant2.Print();
-Console.WriteLine();
+
 
 // Задание 3
-
+Console.WriteLine("\nЗадание 3");
 applicant1.FullName = "  ";
 applicant2.ClassNumber = 12;
 applicant2.AverageScore = -12.0;
