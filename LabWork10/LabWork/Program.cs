@@ -68,6 +68,7 @@ applicant2.FullName = "Копатыч";
 Console.WriteLine($"\n{cloneApplicant.FullName} закончил {cloneApplicant.ClassNumber} класс со средним баллом {cloneApplicant.AverageScore}.\n");
 
 // Задание 5
+
 foreach (var applicant in applicants)
     if (applicant is not null)
         Console.WriteLine($"{applicant.FullName} закончил {applicant.ClassNumber} класс со средним баллом {applicant.AverageScore}.");
