@@ -23,7 +23,7 @@ static double Exponential(double x, int n)
 
     if (n % 2 != 0)
     {
-        n -= 1;
+        n--;
         return x * Exponential(x, n / 2) * Exponential(x, n / 2);
     }  
 
