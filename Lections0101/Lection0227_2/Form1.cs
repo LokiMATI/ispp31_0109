@@ -10,7 +10,7 @@ namespace Lection0227_2
         private void OpenButton_Click(object sender, EventArgs e)
         {
             Form2 form = new Form2();
-            form.FormAction =ChangeText;
+            form.FormAction = ChangeText;
             form.ShowDialog();
         }
 
