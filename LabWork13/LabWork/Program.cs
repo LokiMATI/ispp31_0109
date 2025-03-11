@@ -1,105 +1,79 @@
 ﻿using System.Text;
 
 Console.Write("Введите строку: ");
-string input = Console.ReadLine();
+string inputString = Console.ReadLine();
 
 #region Задание 1
+Console.WriteLine("Задание 1");
+Console.WriteLine($"Количество символов в ведённой строке: {inputString.Length}");
+Console.WriteLine($"Количество символов в ведённой строке без пробелов: {inputString.Replace(" ", string.Empty).Length}");
 
-Console.WriteLine("Задание 1\n");
+int letterCount = 0;
 
-Console.WriteLine($"Количество символов в ведённой строке: {input.Length}");
-Console.WriteLine($"Количество символов в ведённой строке без пробелов: {input.Replace(" ", "").Length}");
-
-int symbolCount = 0;
-
-foreach (var symbol in input)
+foreach (var symbol in inputString)
     if (Char.IsLetter(symbol))
-        symbolCount++;
+        letterCount++;
 
-Console.WriteLine($"Количество букв в ведённой строке: {symbolCount}");
+Console.WriteLine($"Количество букв в ведённой строке: {letterCount}");
 
 Console.Write("Введите искомый символ: ");
 char searchSymbol = Char.Parse(Console.ReadLine());
 
-List<int> positions = new();
-int lastPosition = 0;
+for (int i = 0; i < inputString.Length; i++)
+    if (searchSymbol == inputString[i])
+        Console.WriteLine(i);
 
-while (input.IndexOf(searchSymbol, lastPosition) != -1 && lastPosition < input.Length)
-{
-    positions.Add(input.IndexOf(searchSymbol, lastPosition));
-    lastPosition = positions[positions.Count - 1] + 1;
-}
-
-if (positions.Count == 0)
+if (!inputString.Contains(searchSymbol))
     Console.WriteLine("В строке нет искомого символа.");
-else
-    foreach (int position in positions)
-        Console.Write($"{position} ");
-
-Console.WriteLine("\nЗадание 2");
 #endregion
 
 #region Задание 2
-input = input.Trim();
+Console.WriteLine("\nЗадание 2");
 
-var strings = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+string[] splitStrings = inputString.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
-input = String.Join(" ", strings);
+inputString = String.Join(" ", splitStrings);
 
-Console.WriteLine($"{input}\n");
+Console.WriteLine($"Строка с убранными лишними побелами:\n{inputString}");
 
 Console.WriteLine("Выберете регистр:\n1) верхний,\n2) нижний,\n3) инвертированный");
 Console.Write("Напишите цифру варианта: ");
 int register = int.Parse(Console.ReadLine());
 
-StringBuilder inputStringBuilder = new StringBuilder();
-
 switch (register)
 {
     case 1:
-        inputStringBuilder.Append(input.ToUpper()); 
+        Console.WriteLine(inputString.ToUpper());
         break;
 
     case 2:
-        inputStringBuilder.Append(input.ToLower());
+        Console.WriteLine(inputString.ToLower());
         break;
-        
+
 
     case 3:
-        foreach (var symbol in input)
+        StringBuilder inputStringBuilder = new StringBuilder();
+        foreach (char symbol in inputString)
             if (Char.IsLower(symbol))
                 inputStringBuilder.Append(Char.ToUpper(symbol));
             else
                 inputStringBuilder.Append(Char.ToLower(symbol));
+
+        Console.WriteLine(inputStringBuilder.ToString());
         break;
 
     default:
         Console.WriteLine("Такого варианта нет.");
         break;
 }
-
-Console.WriteLine($"{inputStringBuilder.ToString()}\n");
 #endregion
 
 #region Задание 3
-List<string> dividingSymbols = [".", "!", "?", "!?", "?!"];
+Console.WriteLine("\nЗадание 3");
+string[] dividingSymbols = [".", " ", ",", ";", ":"];
 
-var sentences = input.Split(dividingSymbols.ToArray(), StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+var words = inputString.Split(dividingSymbols, StringSplitOptions.RemoveEmptyEntries);
 
-foreach (var sentence in sentences)
-    Console.WriteLine(sentence);
-Console.WriteLine();
-
-dividingSymbols.AddRange([" ", ","]);
-
-sentences = input.Split(dividingSymbols.ToArray(), StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-
-foreach (var sentence in sentences)
-    Console.WriteLine(sentence);
-Console.WriteLine();
-#endregion
-
-#region Задание 4
-Product product = new() { Name="тост", Price=2.23, ExpirationDate=DateTime.Now };
-Console.WriteLine(product);
+foreach (var word in words)
+    Console.WriteLine(word);
 #endregion

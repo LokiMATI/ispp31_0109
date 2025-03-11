@@ -2,8 +2,9 @@
 using System.Text.RegularExpressions;
 
 Console.Write("Введите строку: ");
-string input = Console.ReadLine();
-string pattern = @"\s+";
-string replacement = " ";
+string inputString = Console.ReadLine();
 
-Console.WriteLine(Regex.Replace(input, pattern, replacement));
+Regex regex = new(@"\s+");
+string target = " ";
+
+Console.WriteLine(regex.Replace(inputString, target));
