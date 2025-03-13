@@ -1,0 +1,1 @@
+﻿public delegate int MathDelegate(int x);
