@@ -38,5 +38,5 @@ public class Application
 class Document : ICloneable
 {
     public string Text { get; set; }
-    public object Clone() => new Document() { Text = Text }
+    public object Clone() => new Document() { Text = Text };
 }
