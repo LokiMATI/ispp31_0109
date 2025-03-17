@@ -6,7 +6,7 @@ namespace Task5
     {
         private static readonly Configuration _instance = new();
 
-        public Dictionary<string, string> settings = new Dictionary<string, string>();
+        public Dictionary<string, string> settings = new();
 
         private Configuration() { }
 
@@ -15,19 +15,21 @@ namespace Task5
         public void RemoveSetting(string index)
             => settings.Remove(index);
 
-        public Configuration? this[string index]
+        public string? this[string index]
         {
-            get => _instance[index];
-            set => _instance[index] = value;
+            get => settings[index];
+            set => settings[index] = value;
         }
 
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
+            builder.AppendLine("{");
             foreach (var setting in settings)
-            {
-                builder.AppendLine($""""""")
-            }
+                builder.AppendLine($"  \"{setting.Key}\": \"{setting.Value}\"");
+
+            builder.AppendLine("}");
+            return builder.ToString();
         }
     }
 }
