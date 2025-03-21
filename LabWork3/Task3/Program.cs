@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 
+Exponential(2, 15);
+
 Debug.WriteLine(Exponential(5, -2));
 Debug.Assert(Exponential(5, -2) == -1);
 
@@ -18,14 +20,13 @@ static double Exponential(double x, int n)
     if (n < 0)
         return -1;
 
-    if (n == 0) 
+    if (n == 0)
         return 1;
 
-    if (n % 2 != 0)
-    {
-        n--;
-        return x * Exponential(x, n / 2) * Exponential(x, n / 2);
-    }  
+    double y = Exponential(x, n / 2);
 
-    return Exponential(x, n / 2) * Exponential(x, n / 2);
+    if (n % 2 != 0)
+        return x * y * y;
+
+    return y * y;
 }

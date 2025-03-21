@@ -3,7 +3,7 @@
 Debug.WriteLine(Exponential(5, 3));
 Debug.Assert(Exponential(5, 3) == 125);
 
-Debug.WriteLine(Exponential(10,-2));
+Debug.WriteLine(Exponential(10, -2));
 Debug.Assert(Exponential(10, -2) == 0.01);
 
 // Задание 2
