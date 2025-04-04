@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LabWork20.Models;
 using Microsoft.AspNetCore.Http;
+using System.Reflection.Metadata.Ecma335;
 
 namespace LabWork20.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CatsController : ControllerBase
+    public class CatController : ControllerBase
     {
         private static List<Cat> _cats = new()
         {
@@ -20,11 +21,16 @@ namespace LabWork20.Controllers
             new Cat { Id = 8, Name = "Клео", Breed = "Сиамская", Color = "Коричневый", Age = 3 },
             new Cat { Id = 9, Name = "Симба", Breed = "Мейн-кун", Color = "Рыжий", Age = 5 },
             new Cat { Id = 10, Name = "Ромашка", Breed = "Персидская", Color = "Белый", Age = 2 }
+            new Cat { Id = 11, Name = "Тест", Breed = "Персидская", Color = "Белый", Age = 2 }
+            new Cat { Id = 12, Name = "Ромашка", Breed = "Персидская", Color = "Белый", Age = 2 }
         };
 
         [HttpGet("/cats")]
-        public ActionResult<List<Cat>> GetList()
-            => Ok(_cats);
+        public ActionResult<List<Cat>> GetList(int page = 1, int pageSize = int.MaxValue)
+        {
+            var cats = _cats.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+            return Ok(cats);
+        }
 
         [HttpGet("/cats/{id:int}")]
         public ActionResult<Cat> GetById(int id)
@@ -40,5 +46,35 @@ namespace LabWork20.Controllers
         [HttpGet("/cats/breed")]
         public ActionResult<List<Cat>> GetByBreed(string breed)
             => Ok(_cats.Where(c => c.Breed == breed));
+
+        [HttpDelete("{id:int}")]
+        public ActionResult Delete(int id)
+        {
+            var cat = _cats.FirstOrDefault(_c => _c.Id == id);
+
+            if (cat is not null)
+            {
+                _cats.Remove(cat);
+                return NoContent();
+            }
+
+            return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult<Cat> Create([FromBody]Cat cat)
+        {
+            try
+            {
+                cat.Id = _cats.Count() + 1;
+                _cats.Add(cat);
+
+                return Ok(cat);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

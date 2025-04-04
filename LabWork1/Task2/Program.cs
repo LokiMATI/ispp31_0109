@@ -20,7 +20,7 @@ static void BubbleSort(int[] array)
             }
 
         foreach (int item in array)
-            Console.Write(item + " ");
+            Console.Write($"{item} ");
         Console.WriteLine();
     } while (isChange);
 }
