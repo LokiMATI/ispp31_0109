@@ -9,7 +9,7 @@ namespace Task3
 
         private void CreateDocumentButton_Click(object sender, EventArgs e)
         {
-
+            DocumentCreator.CreateDocument(DescriptionTextBox.Text);
         }
 
     }

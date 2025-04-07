@@ -11,10 +11,12 @@ namespace Task3
 
             var document = wordApp.Documents.Add();
 
-            document.Content.Text = text;
+            var paragraph = document.Paragraphs[1];
 
-            document.Content.Font.Size = 14;
-            document.Content.Font.Name = "Times New Roman";
+            paragraph.Format.Alignment = Word.WdParagraphAlignment.wdAlignParagraphDistribute;
+            paragraph.Range.Font.Size = 14;
+            paragraph.Range.Font.Name = "Times New Roman";
+            paragraph.Range.Text = text;
 
             SaveFileDialog saveFileDialog = new();
             saveFileDialog.Filter = "docx|*.docx|pdf|*.pdf";
