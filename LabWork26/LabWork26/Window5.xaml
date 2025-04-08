@@ -1,0 +1,27 @@
+﻿<Window x:Class="LabWork26.Window5"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork26"
+        mc:Ignorable="d"
+        Title="Window5" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+        <WrapPanel VerticalAlignment="Top" Orientation="Horizontal" DockPanel.Dock="Top">
+            <Button Name="Task1Button" Content=" Задание 1" Width="200"/>
+            <Button Name="Task2Button" Content=" Задание 2" Width="200"/>
+            <Button Name="Task3Button" Content=" Задание 3" Width="200"/>
+            <Button Name="Task4Button" Content=" Задание 4" Width="200"/>
+            <Button Name="Task5Button" Content=" Задание 5" Width="200"/>
+
+        </WrapPanel>
+        <Label Content="Подвал" Background="Beige" DockPanel.Dock="Bottom"/>
+        <Label Content="Меню" Background="CadetBlue" DockPanel.Dock="Left"/>
+        <Canvas>
+            <Image Height="100" Canvas.Left="10" Canvas.Top="10" Width="100" Source="/Капибара.jpg"/>
+            <Image Height="100" Canvas.Right="10" Canvas.Top="10" Width="100" Source="/Капибара.jpg"/>
+            <Image Height="100" Canvas.Left="10" Canvas.Bottom="10" Width="100" Source="/Капибара.jpg"/>
+            <Image Height="100" Canvas.Right="10" Canvas.Bottom="10" Width="100" Source="/Капибара.jpg"/>
+        </Canvas>
+    </DockPanel>
+</Window>

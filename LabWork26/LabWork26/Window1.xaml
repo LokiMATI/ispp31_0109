@@ -1,0 +1,17 @@
+﻿<Window x:Class="LabWork26.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork26"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800">
+    <StackPanel VerticalAlignment="Top" Orientation="Horizontal">
+        <Button Name="Task1Button" Content=" Задание 1" Width="200"/>
+        <Button Name="Task2Button" Content=" Задание 2" Width="200"/>
+        <Button Name="Task3Button" Content=" Задание 3" Width="200"/>
+        <Button Name="Task4Button" Content=" Задание 4" Width="200"/>
+        <Button Name="Task5Button" Content=" Задание 5" Width="200"/>
+
+    </StackPanel>
+</Window>
