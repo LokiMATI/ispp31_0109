@@ -1,0 +1,34 @@
+﻿<Page x:Class="Lection04082025.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lection04082025.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1">
+
+    <StackPanel>
+        <Label Content="Page 1"/>
+        <!--<Expander Header ="My data" ExpandDirection="Left">
+        </Expander>-->
+        <!--<GroupBox Header ="My data" ExpandDirection="Left">
+        </GroupBox>-->
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    qwerty
+                </TabItem.Header>
+                <TabItem.Content>
+                <Label Content="123"/>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="tab2">
+                <Label Content="456"/>
+            </TabItem>
+            <TabItem Header="tab3">
+                <Label Content="789"/>
+            </TabItem>
+        </TabControl>
+    </StackPanel>
+</Page>
