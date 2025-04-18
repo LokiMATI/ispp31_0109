@@ -1,0 +1,26 @@
+﻿<Window x:Class="Lection0409.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lection0409"
+        mc:Ignorable="d"
+        Title="{Binding ElementName=ContentFrame, Path=Content.Title}" Height="450" Width="800">
+    <DockPanel>
+        <Label Content="header" DockPanel.Dock="Top" Background="LightCyan"/>
+        <Label Content="footer" DockPanel.Dock="Bottom" Background="LightGreen"/>
+        <StackPanel Background="LightYellow">
+            <StackPanel Orientation="Horizontal">
+                <Button Name="BackButton" Content="&lt;" Width="40" Click="BackButton_Click"/>
+                <Button Name="ForwardButton" Content="&gt;" Width="40" Click="ForwardButton_Click"/>
+            </StackPanel>
+            <Button x:Name="OpenPage1Button" Content="page 1" Click="OpenPage1Button_Click"/>
+            <Button x:Name="OpenPage2Button" Content="page 2" Click="OpenPage2Button_Click"/>
+            <Button x:Name="OpenPage3Button" Content="page 3" Click="OpenPage3Button_Click"/>
+        </StackPanel>
+        <Frame Name="ContentFrame" 
+               NavigationUIVisibility="Hidden"
+               Source="/Pages/StartPage.xaml"
+               ContentRendered="ContentFrame_ContentRendered"/>
+    </DockPanel>
+</Window>

@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lection0407", "Lection0407\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lection0407Wpf", "Lection0407Wpf\Lection0407Wpf.csproj", "{1CCA1E53-AF78-4893-8C2E-71FD3E4B35F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lection0409", "Lection0409\Lection0409.csproj", "{7B916673-20A6-4F89-ABB4-0B646A6EE627}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{1CCA1E53-AF78-4893-8C2E-71FD3E4B35F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CCA1E53-AF78-4893-8C2E-71FD3E4B35F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CCA1E53-AF78-4893-8C2E-71FD3E4B35F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B916673-20A6-4F89-ABB4-0B646A6EE627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B916673-20A6-4F89-ABB4-0B646A6EE627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B916673-20A6-4F89-ABB4-0B646A6EE627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B916673-20A6-4F89-ABB4-0B646A6EE627}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
