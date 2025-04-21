@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\bumblebee.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\AlexBrush-Regular.ttf" />
+    <None Remove="Fonts\Amatic-Bold.ttf" />
+    <None Remove="Fonts\AmaticSC-Regular.ttf" />
+    <None Remove="Fonts\Pacifico.ttf" />
+    <None Remove="Fonts\PressStart2P-Regular.ttf" />
+    <None Remove="Fonts\William Narasi.otf" />
+    <None Remove="galaxy.jpg" />
+    <None Remove="Images\galaxy.jpg" />
+    <None Remove="Images\plant.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\bumblebee.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\AlexBrush-Regular.ttf" />
+    <Resource Include="Fonts\Amatic-Bold.ttf" />
+    <Resource Include="Fonts\AmaticSC-Regular.ttf" />
+    <Resource Include="Fonts\Pacifico.ttf" />
+    <Resource Include="Fonts\PressStart2P-Regular.ttf" />
+    <Resource Include="Fonts\William Narasi.otf" />
+    <Resource Include="galaxy.jpg" />
+    <Resource Include="Images\galaxy.jpg" />
+    <Resource Include="Images\plant.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+﻿<Application x:Class="Lection0421.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Lection0421"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <SolidColorBrush x:Key="BackgroundColor" Color="#123456"/>
+        <SolidColorBrush x:Key="FontColor" Color="Lime"/>
+
+        <FontFamily x:Key="BaseFont">
+            ./Fonts/#Pacifico,./Fonts/#Press Start 2P,Arial Black
+        </FontFamily>
+
+        <ImageSource x:Key="Galaxy">Images/galaxy.jpg</ImageSource>
+        
+        <Color x:Key="Background">#ffa0f0</Color>
+        <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}"/>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Red"/>
+            <Setter Property="Foreground" Value="Yellow"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+    </Application.Resources>
+</Application>
