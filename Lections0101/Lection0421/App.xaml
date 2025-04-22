@@ -17,6 +17,13 @@
         <Color x:Key="Background">#ffa0f0</Color>
         <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource Background}"/>
 
+        <Style TargetType="Control">
+            <Setter Property="Background" Value="{StaticResource BackgroundBrush}"/>
+            <Setter Property="Foreground" Value="Yellow"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+        
         <Style TargetType="Button">
             <Setter Property="Background" Value="Red"/>
             <Setter Property="Foreground" Value="Yellow"/>
