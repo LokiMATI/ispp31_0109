@@ -12,11 +12,7 @@
   <ItemGroup>
     <None Remove="Fonts\Roboto-VariableFont_wdth,wght.ttf" />
     <None Remove="galaxy.jpg" />
-    <None Remove="Images\background.jpg" />
     <None Remove="Images\galaxy.jpg" />
-    <None Remove="Images\plant.png" />
-    <None Remove="Images\zombie ball.png" />
-    <None Remove="Images\zombie.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,11 +26,7 @@
   <ItemGroup>
     <Resource Include="Fonts\Roboto-VariableFont_wdth,wght.ttf" />
     <Resource Include="galaxy.jpg" />
-    <Resource Include="Images\background.jpg" />
     <Resource Include="Images\galaxy.jpg" />
-    <Resource Include="Images\plant.png" />
-    <Resource Include="Images\zombie ball.png" />
-    <Resource Include="Images\zombie.png" />
   </ItemGroup>
 
 </Project>

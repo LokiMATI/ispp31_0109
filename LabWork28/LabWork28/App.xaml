@@ -4,9 +4,6 @@
              xmlns:local="clr-namespace:LabWork28"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style TargetType="Label">
-            <Setter Property="Foreground" Value="DarkBlue"/>
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
-        </Style>
+        
     </Application.Resources>
 </Application>
