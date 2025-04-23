@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Color x:Key="BackgroundColor">#FF89F979</Color>
-    <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}"/>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}"/>
 
     <Color x:Key="FontColor">DarkGreen</Color>
-    <SolidColorBrush x:Key="FontBrush" Color="{StaticResource FontColor}"/>
+    <SolidColorBrush x:Key="FontBrush" Color="{DynamicResource FontColor}"/>
 
 </ResourceDictionary>

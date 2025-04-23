@@ -34,17 +34,14 @@ namespace Lection0422
 
         private void ChangeTheme(string name)
         {
-            Application.Current.Resources.MergedDictionaries.Clear();
-
             AddTheme(name);
-            AddTheme("ControlsTheme");
         }
 
         private static void AddTheme(string name)
         {
             var uriDictionary = new Uri($"Themes/{name}.xaml", UriKind.Relative);
             var dictionary = Application.LoadComponent(uriDictionary) as ResourceDictionary;
-            Application.Current.Resources.MergedDictionaries.Add(dictionary);
+            Application.Current.Resources.MergedDictionaries[0] = dictionary;
         }
     }
 }

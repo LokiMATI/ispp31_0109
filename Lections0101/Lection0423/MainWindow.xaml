@@ -1,0 +1,52 @@
+﻿<Window x:Class="Lection0423.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lection0423"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="600">
+    <StackPanel>
+        <Slider Value="50"
+                Minimum="10"
+                Maximum="100"/>
+        <TextBox 
+            TextChanged="TextBox_TextChanged"
+            Language="ru"
+            SpellCheck.IsEnabled="True"
+            Text="{Binding ElementName=PassowdBox, Path=Password, UpdateSourceTrigger=PropertyChanged}"
+            />
+        <PasswordBox x:Name="PassowdBox"
+                     Password=""
+                     />
+
+        <StackPanel Orientation="Horizontal">
+            <ToggleButton Content="Ж" Width="30" 
+                          Checked="ToggleButton_Checked"
+                          Unchecked="ToggleButton_Unchecked"/>
+            <ToggleButton Content="К" Width="30"/>
+            <ToggleButton Content="Ч" Width="30"/>
+        </StackPanel>
+        
+        <CheckBox x:Name="AllowCheckBox" 
+                  Content="allow" 
+                  Checked="AllowCheckBox_Checked" 
+                  Unchecked="AllowCheckBox_Checked"/>
+        <GroupBox>
+            <StackPanel>
+                <StackPanel RadioButton.Checked="RadioButton_Checked">
+                    <RadioButton/>
+                    <RadioButton/>
+                </StackPanel>
+
+                <StackPanel>
+                    <RadioButton Content="123" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="456" Checked="RadioButton_Checked"/>
+                    <RadioButton Content="789" Checked="RadioButton_Checked"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        
+        <Button x:Name="OkButton" Content="Ok" IsEnabled="False"/>
+    </StackPanel>
+</Window>
