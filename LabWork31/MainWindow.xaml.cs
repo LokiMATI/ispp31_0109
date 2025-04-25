@@ -32,7 +32,9 @@ namespace LabWork31
         private void BirthDateDatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             int age = DateTime.Now.Year - BirthDateDatePicker.SelectedDate.Value.Year;
-            age = DateTime.Now.Date > BirthDateDatePicker.SelectedDate.Value.Date ? --age : age;
+            if (DateTime.Now.DayOfYear < BirthDateDatePicker.SelectedDate.Value.DayOfYear)
+                --age;
+
             AgeTextBlock.Text = $"Полных лет: {age}";
         }
 
@@ -45,8 +47,6 @@ namespace LabWork31
         {
             var experience = Math.Ceiling(ExperienceSlider.Value);
             string yearTitle;
-
-            if (e)
 
             ExperienceTextBox.Text = $"Стаж: {experience} ";
         }
