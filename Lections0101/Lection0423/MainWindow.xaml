@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lection0423"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="600">
+        Title="MainWindow" Height="423" Width="600">
     <StackPanel>
-        <Slider Value="50"
-                Minimum="10"
-                Maximum="100"/>
+        <Slider x:Name="PriceSlider"
+                Minimum="0"
+                Maximum="100"
+                TickFrequency="10"
+                TickPlacement="BottomRight"
+                ValueChanged="PriceSlider_ValueChanged"/>
+        <Label x:Name="PriceLabel" Content="0"/>
+
         <TextBox 
             TextChanged="TextBox_TextChanged"
             Language="ru"
@@ -48,5 +53,6 @@
         </GroupBox>
         
         <Button x:Name="OkButton" Content="Ok" IsEnabled="False"/>
+        <Calendar x:Name="Calendar"/>
     </StackPanel>
 </Window>

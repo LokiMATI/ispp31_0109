@@ -19,6 +19,8 @@ namespace Lection0423
         public MainWindow()
         {
             InitializeComponent();
+
+            Calendar.BlackoutDates.Add(new CalendarDateRange(DateTime.Today, DateTime.Today.AddDays(5)));
         }
 
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
@@ -58,6 +60,15 @@ namespace Lection0423
         private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void PriceSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            //PriceLabel.Content = PriceSlider.Value.ToString("0.00");
+            //PriceLabel.Content = $"{PriceSlider.Value:0.00} руб.";
+
+            var price = Math.Round(PriceSlider.Value, 2);
+            PriceLabel.Content = price;
         }
     }
 }
