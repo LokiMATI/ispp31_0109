@@ -6,7 +6,38 @@
         xmlns:local="clr-namespace:Lection0425"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="FileInfoTemplate">
+            <StackPanel Width="200">
+                <TextBlock Text="{Binding Name}" FontSize="20" FontStyle="Italic" Foreground="Red"/>
+                <TextBlock Text="{Binding Length}"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="FullFileInfoTemplate">
+            <StackPanel Width="200">
+                <TextBlock Text="{Binding Name}" FontSize="20" FontStyle="Oblique" Foreground="Black"/>
+                <TextBlock Text="{Binding Length}"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
     <StackPanel>
+
+        <ListView x:Name="FilesListView" Height="300"
+                  ItemTemplate="{StaticResource FileInfoTemplate}"
+                  
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+        <Button x:Name="ChangeButton" Content="Change" Click="ChangeButton_Click"/>
+
+        <TextBlock Text="---"/>
+
         <ListBox x:Name="UsersListBox" Height="100"/>
         <ListBox x:Name="FilesListBox" Height="200"
                  DisplayMemberPath="Name"

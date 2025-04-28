@@ -26,6 +26,13 @@ namespace Lection0425
 
             var files = new DirectoryInfo(@"Y:\МДК.01.01").GetFiles();
             FilesListBox.ItemsSource = files;
+
+            FilesListView.ItemsSource = files;
+        }
+
+        private void ChangeButton_Click(object sender, RoutedEventArgs e)
+        {
+            FilesListView.ItemTemplate = (DataTemplate)FindResource("FullFileInfoTemplate");
         }
     }
 }

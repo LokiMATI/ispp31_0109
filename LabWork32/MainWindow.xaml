@@ -1,0 +1,80 @@
+﻿<Window x:Class="LabWork32.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LabWork32"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="CategoriesListBox" Grid.ColumnSpan="2">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+
+        <StackPanel Grid.Row="1" Grid.RowSpan="2">
+            <ComboBox Name="SortingComboBox" Grid.Row="1" Height="20" VerticalAlignment="Top" >
+                <ComboBoxItem Content="сначала недорогие" IsSelected="True"/>
+                <ComboBoxItem Content="сначала дорогие"/>
+                <ComboBoxItem Content="по новинкам"/>
+                <ComboBoxItem Content="по скидке"/>
+                <ComboBoxItem Content="по количеству отзывов"/>
+                <ComboBoxItem Content="сначала с лучшей оценкой"/>
+            </ComboBox>
+            <ListBox x:Name="AvailabilityParametersListBox">
+                <CheckBox Content="в наличии" IsChecked="True"/>
+                <CheckBox Content="под заказ: сегодня" IsChecked="True"/>
+                <CheckBox Content="под заказ: завтра" IsChecked="True"/>
+                <CheckBox Content="под заказ: позже" IsChecked="True"/>
+                <CheckBox Content="нет в продаже"/>
+            </ListBox>
+            <Button x:Name="ApplyAvailabilityParametersButton" Content="Применить" Click="ApplyAvailabilityParametersButton_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            <StackPanel>
+                <TextBlock Text="{Binding ElementName=SortingComboBox, Path=Text, StringFormat=Сортировка: {0}}"/>
+                <TextBlock Text="{Binding ElementName=CategoriesListBox, Path=SelectedValue, StringFormat=Категория: {0}}"/>
+                <TextBlock x:Name="AvailabilityParametersTextBlock" Text="Наличие:"/>
+            </StackPanel>
+            <ListView x:Name="ProductsListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/404.png" Width="30" Height="30"/>
+                            <TextBlock Text="{Binding Name}" Width="100" VerticalAlignment="Center" Margin="10"/>
+                            <StackPanel Width="100">
+                                <TextBlock Text="{Binding Price}" />
+                                <Button x:Name="BuyButton" Content="Купить" Click="BuyButton_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">
+            <ListBox x:Name="ConsumerBasketListBox"  DisplayMemberPath="Name" SelectionMode="Multiple" Height="200"/>
+            <Button x:Name="DeleteProductButton" Content="Удалить" Click="DeleteProductButton_Click"/>
+        </StackPanel>
+        
+
+    </Grid>
+
+
+</Window>
