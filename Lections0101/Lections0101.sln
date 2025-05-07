@@ -57,6 +57,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lection0425", "Lection0425\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lection0428", "Lection0428\Lection0428.csproj", "{0369D075-82D5-4C7E-8B70-D63F02285D52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lection0507", "Lection0507\Lection0507.csproj", "{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{78B50C76-E181-4A4E-8045-385D97D6EFE5}"
+	ProjectSection(SolutionItems) = preProject
+		Y:\МДК.01.01\Images\background.jpg = Y:\МДК.01.01\Images\background.jpg
+		Y:\МДК.01.01\Images\bumblebee.ico = Y:\МДК.01.01\Images\bumblebee.ico
+		Y:\МДК.01.01\Images\error.ico = Y:\МДК.01.01\Images\error.ico
+		Y:\МДК.01.01\Images\favicon.ico = Y:\МДК.01.01\Images\favicon.ico
+		Y:\МДК.01.01\Images\galaxy.jpg = Y:\МДК.01.01\Images\galaxy.jpg
+		Y:\МДК.01.01\Images\plant.png = Y:\МДК.01.01\Images\plant.png
+		Y:\МДК.01.01\Images\zombie ball.png = Y:\МДК.01.01\Images\zombie ball.png
+		Y:\МДК.01.01\Images\zombie.png = Y:\МДК.01.01\Images\zombie.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +185,10 @@ Global
 		{0369D075-82D5-4C7E-8B70-D63F02285D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0369D075-82D5-4C7E-8B70-D63F02285D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0369D075-82D5-4C7E-8B70-D63F02285D52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

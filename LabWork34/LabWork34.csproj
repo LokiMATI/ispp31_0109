@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\plant.png" />
+    <None Remove="Images\zombie ball.png" />
+    <None Remove="Images\zombie.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\plant.png" />
+    <Resource Include="Images\zombie ball.png" />
+    <Resource Include="Images\zombie.png" />
+  </ItemGroup>
+
+</Project>

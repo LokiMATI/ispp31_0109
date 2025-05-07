@@ -6,6 +6,30 @@
         xmlns:local="clr-namespace:LabWork32"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="VirtualizingStackPanel">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/404.png" Width="30" Height="30"/>
+                <TextBlock Text="{Binding Name}" Width="100" VerticalAlignment="Center" Margin="10"/>
+                <StackPanel Width="100">
+                    <TextBlock Text="{Binding Price}" />
+                    <Button x:Name="BuyButton" Content="Купить" Click="BuyButton_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="WrapPanel">
+            <WrapPanel Orientation="Vertical">
+                <Image Source="/404.png" Width="30" Height="30" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding Name}" Width="100" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,5,0,5"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Price}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" />
+                    <Button x:Name="BuyButton" Content="Купить" Click="BuyButton_Click" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </WrapPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         
         <Grid.RowDefinitions>
@@ -52,20 +76,7 @@
                 <TextBlock Text="{Binding ElementName=CategoriesListBox, Path=SelectedValue, StringFormat=Категория: {0}}"/>
                 <TextBlock x:Name="AvailabilityParametersTextBlock" Text="Наличие:"/>
             </StackPanel>
-            <ListView x:Name="ProductsListView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/404.png" Width="30" Height="30"/>
-                            <TextBlock Text="{Binding Name}" Width="100" VerticalAlignment="Center" Margin="10"/>
-                            <StackPanel Width="100">
-                                <TextBlock Text="{Binding Price}" />
-                                <Button x:Name="BuyButton" Content="Купить" Click="BuyButton_Click"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <ListView x:Name="ProductsListView" ItemTemplate="{StaticResource VirtualizingStackPanel}"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="3" Grid.RowSpan="2">

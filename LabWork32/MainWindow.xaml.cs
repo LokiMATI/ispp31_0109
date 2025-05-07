@@ -18,12 +18,12 @@ namespace LabWork32
             CategoriesListBox.Items.Add("Игрушки");
 
             List<Product> products = [
-                new Product 
-                { 
-                    Id = 0, 
-                    Name = "Ока(Капсула смерти)", 
-                    Category = "Транспорт", 
-                    Price = 200_000 
+                new Product
+                {
+                    Id = 0,
+                    Name = "Ока(Капсула смерти)",
+                    Category = "Транспорт",
+                    Price = 200_000
                 },
                 new Product
                 {
@@ -81,7 +81,9 @@ namespace LabWork32
 
         private void DeleteProductButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in ConsumerBasketListBox.SelectedItems)
+            Product[] products = new Product[ConsumerBasketListBox.SelectedItems.Count];
+            ConsumerBasketListBox.SelectedItems.CopyTo(products, 0);
+            foreach (var item in products)
                 ConsumerBasketListBox.Items.Remove(item);
         }
     }
