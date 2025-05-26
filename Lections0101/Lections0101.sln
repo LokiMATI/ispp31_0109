@@ -71,6 +71,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		Y:\МДК.01.01\Images\zombie.png = Y:\МДК.01.01\Images\zombie.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lection0526", "Lection0526\Lection0526.csproj", "{40DC1BB6-DE9A-425C-A168-DDC75CE3959F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -189,8 +191,15 @@ Global
 		{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED867E53-8B4B-4E44-A4C7-55ED16A6C643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40DC1BB6-DE9A-425C-A168-DDC75CE3959F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40DC1BB6-DE9A-425C-A168-DDC75CE3959F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40DC1BB6-DE9A-425C-A168-DDC75CE3959F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40DC1BB6-DE9A-425C-A168-DDC75CE3959F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B00B1CA2-41EB-46E6-B566-5835D461CA96}
 	EndGlobalSection
 EndGlobal

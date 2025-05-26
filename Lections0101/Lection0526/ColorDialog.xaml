@@ -1,0 +1,16 @@
+﻿<Window x:Class="Lection0526.ColorDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lection0526"
+        mc:Ignorable="d"
+        Title="ColorDialog" Height="450" Width="800">
+    <StackPanel>
+        <TextBox Text="{Binding Color, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        <TextBox />
+        <Rectangle Fill="{Binding Color, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="100" Height="100"/>
+        <Button x:Name="OkButton" Content="Ok" IsDefault="True" Click="OkButton_Click"/>
+        <Button x:Name="CancelButton" Content="Cancel" IsCancel="True"/>
+    </StackPanel>
+</Window>
