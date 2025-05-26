@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ExitIcon.PNG" />
+    <None Remove="plant.png" />
+    <None Remove="Question.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ExitIcon.PNG" />
+    <Resource Include="Question.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="plant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </SplashScreen>
+  </ItemGroup>
+
+</Project>
