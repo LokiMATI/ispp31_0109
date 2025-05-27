@@ -23,5 +23,32 @@ namespace Task4
         {
             InitializeComponent();
         }
+        private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (LoginTextBox.Text == "admin" && PasswordTextBox.Text == "qwerty")
+            {
+                AdministratorWindow window = new();
+                Hide();
+                window.ShowDialog();
+                Show();
+            }
+            else if (LoginTextBox.Text == "manager" && PasswordTextBox.Text == "12345")
+            {
+                ManagerWindow window = new();
+                Hide();
+                window.ShowDialog();
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин или пароль!", "Неверные данные", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow window = new();
+            window.Show();
+        }
     }
 }

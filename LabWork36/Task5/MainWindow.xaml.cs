@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Task4
+namespace Task5
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -21,12 +21,14 @@ namespace Task4
             InitializeComponent();
         }
 
-        private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
+        private void ColorMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            AuthorizationDialog dialog = new();
+            ColorWindow window = new();
 
-            Hide();
-            dialog.ShowDialog();
+            if (window.ShowDialog() != true)
+                return;
+
+            Background = new SolidColorBrush(window.Color);
         }
     }
 }
