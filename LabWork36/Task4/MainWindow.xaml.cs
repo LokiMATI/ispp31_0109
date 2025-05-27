@@ -25,7 +25,7 @@ namespace Task4
         {
             AuthorizationDialog dialog = new();
 
-            Hide();
+            Close();
             dialog.ShowDialog();
         }
     }
