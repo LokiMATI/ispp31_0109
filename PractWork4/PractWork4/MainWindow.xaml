@@ -1,0 +1,38 @@
+﻿<Window x:Class="PractWork4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PractWork4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <DataGrid x:Name="GamesListView" ItemsSource="{Binding Games}" Selected="GamesListView_Selected">
+            <DataGrid.ItemTemplate>
+                <DataTemplate DataType="local:Game"/>
+            </DataGrid.ItemTemplate>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding IdGame}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
+                <DataGridTextColumn Header="Price"/>
+                <DataGridTextColumn Header="Sale" Binding="{Binding Sale}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Text="{Binding SelectedGame.Id}"/>
+            <TextBox Text="{Binding ElementName=GamesListView, Path=SelectedItem.Name}"/>
+            <TextBox Text="{Binding ElementName=GamesListView, Path=SelectedItem.Description}"/>
+            <ComboBox SelectedItem="{Binding ElementName=GamesListView, Path=SelectedItem.Category}" ItemsSource="{Binding ElementName=CategoriesListView, Path=Items}" DisplayMemberPath="Name"/>
+            <TextBox Text="{Binding ElementName=GamesListView, Path=SelectedItem.Price}"/>
+            <TextBox Text="{Binding ElementName=GamesListView, Path=SelectedItem.Sale}"/>
+        </StackPanel>
+
+        <DataGrid x:Name="CategoriesListView" ItemsSource="{Binding Categories}">
+            <DataGrid.ItemTemplate>
+                <DataTemplate DataType="local:Category"/>
+            </DataGrid.ItemTemplate>
+        </DataGrid>
+    </StackPanel>
+</Window>
