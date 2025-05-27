@@ -1,0 +1,20 @@
+﻿<Window x:Class="Lection0527.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Lection0527"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <TextBox Text="{Binding MyCat.Id}"/>
+        <TextBox Text="{Binding MyCat.Name}"/>
+        <TextBox Text="{Binding MyCat.Age}"/>
+        
+        <TextBox x:Name="NameTextBox" 
+                 Text="{Binding .}"/>
+        <TextBox x:Name="YearTextBox" 
+                 Text="{Binding Year}"/>
+
+        <TextBox x:Name="ColorTextBox" Text="{Binding Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type StackPanel}}}"/>
+        <Rectangle Fill="{Binding Text, ElementName=ColorTextBox}"
+                   Width="100" Height="100" Stroke="Black"/>
+    </StackPanel>
+</Window>
