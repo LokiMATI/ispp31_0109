@@ -1,0 +1,20 @@
+<UserControl x:Class="Lection0531_Lib.Entry"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lection0531_Lib"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="500">
+    <DockPanel>
+        <TextBlock Text="{Binding Hint}"
+                   VerticalAlignment="Center"/>
+        <Button Content="?" DockPanel.Dock="Right" Background="Red" 
+                Padding="10" Margin="5"
+                x:Name="DeleteButton" Click="DeleteButton_Click"/>
+        <Button Content="?" DockPanel.Dock="Right" Background="Lime" 
+                Padding="10" Margin="5" x:Name="EditButton" Click="EditButton_Click"/>
+        <TextBox MaxLength="{Binding MaxLength}"/>
+    </DockPanel>
+</UserControl>
+
