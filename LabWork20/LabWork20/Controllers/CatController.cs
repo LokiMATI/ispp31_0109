@@ -20,8 +20,8 @@ namespace LabWork20.Controllers
             new Cat { Id = 7, Name = "Оливер", Breed = "Британская короткошерстная", Color = "Черный", Age = 8 },
             new Cat { Id = 8, Name = "Клео", Breed = "Сиамская", Color = "Коричневый", Age = 3 },
             new Cat { Id = 9, Name = "Симба", Breed = "Мейн-кун", Color = "Рыжий", Age = 5 },
-            new Cat { Id = 10, Name = "Ромашка", Breed = "Персидская", Color = "Белый", Age = 2 }
-            new Cat { Id = 11, Name = "Тест", Breed = "Персидская", Color = "Белый", Age = 2 }
+            new Cat { Id = 10, Name = "Ромашка", Breed = "Персидская", Color = "Белый", Age = 2 },
+            new Cat { Id = 11, Name = "Тест", Breed = "Персидская", Color = "Белый", Age = 2 },
             new Cat { Id = 12, Name = "Ромашка", Breed = "Персидская", Color = "Белый", Age = 2 }
         };
 
@@ -47,6 +47,22 @@ namespace LabWork20.Controllers
         public ActionResult<List<Cat>> GetByBreed(string breed)
             => Ok(_cats.Where(c => c.Breed == breed));
 
+        [HttpPost]
+        public ActionResult<Cat> Create([FromBody]Cat cat)
+        {
+            try
+            {
+                cat.Id = _cats.Count() + 1;
+                _cats.Add(cat);
+
+                return Created();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {
@@ -59,22 +75,6 @@ namespace LabWork20.Controllers
             }
 
             return NotFound();
-        }
-
-        [HttpPost]
-        public ActionResult<Cat> Create([FromBody]Cat cat)
-        {
-            try
-            {
-                cat.Id = _cats.Count() + 1;
-                _cats.Add(cat);
-
-                return Ok(cat);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
         }
     }
 }
