@@ -1,0 +1,46 @@
+﻿<Window x:Class="PractWork6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PractWork6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        FontSize="20">
+    <Window.Resources>
+        <ControlTemplate x:Key="CustomRadioButton" TargetType="RadioButton">
+            <Border CornerRadius="10" Background="{TemplateBinding Background}" Margin="5">
+                <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Content="{TemplateBinding Content}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="Green"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="Red"/>
+                    <Setter Property="Foreground" Value="Gray"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" RadioButton.Checked="RadioButton_Checked">
+            <RadioButton Template="{StaticResource CustomRadioButton}" Content="1 кнопка"/>
+            <RadioButton Template="{StaticResource CustomRadioButton}" Content="2 кнопка" IsEnabled="False"/>
+            <RadioButton Template="{StaticResource CustomRadioButton}" Content="3 кнопка"/>
+            <RadioButton Template="{StaticResource CustomRadioButton}" Content="4 кнопка"/>
+            <RadioButton Template="{StaticResource CustomRadioButton}" Content="5 кнопка"/>
+            <local:TimeLabel/>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Товар: Машина"/>
+                <Label Content="Цена: "/>
+                <Label x:Name="PriceLabel"  Content="150000"/>
+                <local:Counter x:Name="Counter" Width="100" MaxValue="20" ValueChanged="Counter_ValueChanged"/>
+                <Label x:Name="TotalCostLabel" Content="Итоговая стоимость: 0"/>
+            </StackPanel>
+        </StackPanel>
+    </DockPanel>
+</Window>

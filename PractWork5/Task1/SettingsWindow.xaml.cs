@@ -33,11 +33,7 @@ namespace Task1
             Properties.Settings.Default.Login = LoginTextBox.Text;
             if (PasswordTextBox.Text.Length > 0)
             {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(PasswordTextBox.Text);
-                byte[] hashedBytes = SHA256.Create().ComputeHash(inputBytes);
-                string hash = Convert.ToHexString(hashedBytes);
-
-                Properties.Settings.Default.Password = hash;
+                Properties.Settings.Default.Password = Hash.GetHash(PasswordTextBox.Text);
             }
             Properties.Settings.Default.Email = EmailTextBox.Text;
             Properties.Settings.Default.Save();

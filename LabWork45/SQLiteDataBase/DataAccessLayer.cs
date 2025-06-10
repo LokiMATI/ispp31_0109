@@ -22,74 +22,52 @@ namespace SQLiteDataBase
         {
             get
             {
-                try
+                using SqliteConnection connection = new(ConnectionString);
+                connection.Open();
+
+                List<Game> games = new();
+
+                SqliteCommand command = new("SELECT * FROM Games", connection);
+                var reader = command.ExecuteReader();
+
+                if (reader.HasRows)
                 {
-                    using SqliteConnection connection = new(ConnectionString);
-                    connection.Open();
-
-                    List<Game> games = new();
-
-                    SqliteCommand command = new("SELECT * FROM Games", connection);
-                    var reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
+                    while (reader.Read())
                     {
-                        while (reader.Read())
+                        games.Add(new Game()
                         {
-                            games.Add(new Game()
-                            {
-                                Id = Convert.ToInt32(reader["Id"]),
-                                Title = Convert.ToString(reader["Title"]),
-                                Price = Convert.ToDouble(reader["Price"])
-                            });
-                        }
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Title = reader["Title"].ToString(),
+                            Price = Convert.ToDouble(reader["Price"])
+                        });
                     }
+                }
 
-                    return games;
-                }
-                catch (Exception)
-                {
-                    return new();
-                }
+                return games;
             }
         }
 
         public static object GetScalarValue(string query)
         {
-            try
-            {
-                using SqliteConnection connection = new(ConnectionString);
-                connection.Open();
+            using SqliteConnection connection = new(ConnectionString);
+            connection.Open();
 
-                SqliteCommand command = new(query, connection);
-                return command.ExecuteScalar();
-            }
-            catch (Exception)
-            {
-                return new();
-            }
+            SqliteCommand command = new(query, connection);
+            return command.ExecuteScalar();
         }
 
         public static DataTable GetDataTable(string query)
         {
-            try
-            {
-                using SqliteConnection connection = new(ConnectionString);
-                connection.Open();
+            using SqliteConnection connection = new(ConnectionString);
+            connection.Open();
 
-                SqliteCommand command = new(query, connection);
-                var reader = command.ExecuteReader();
+            SqliteCommand command = new(query, connection);
+            var reader = command.ExecuteReader();
 
-                DataTable dataTable = new();
+            DataTable dataTable = new();
+            dataTable.Load(reader);
 
-                dataTable.Load(reader);
-
-                return dataTable;
-            }
-            catch (Exception)
-            {
-                return new();
-            }
+            return dataTable;
         }
     }
 }

@@ -37,6 +37,7 @@ namespace Task2
             config.AppSettings.Settings["Email"].Value = EmailTextBox.Text;
             config.Save();
             ConfigurationManager.RefreshSection("appSettings");
+            MessageBox.Show("Данные сохранены");
         }
     }
 }

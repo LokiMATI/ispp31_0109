@@ -27,12 +27,8 @@ namespace Task1
 
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
         {
-            byte[] inputBytes = Encoding.UTF8.GetBytes(PasswordBox.Password);
-            byte[] hashedBytes = SHA256.Create().ComputeHash(inputBytes);
-            string hash = Convert.ToHexString(hashedBytes);
-
             if (Properties.Settings.Default.Login != LoginTextBox.Text ||
-                Properties.Settings.Default.Password != hash)
+                Properties.Settings.Default.Password != Hash.GetHash(PasswordBox.Password))
             {
                 MessageBox.Show("Неверный логин или пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -42,5 +38,7 @@ namespace Task1
             window.Show();
             Close();
         }
+
+        
     }
 }

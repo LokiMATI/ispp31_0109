@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace MSSQLDataBase
+namespace LabWork46Library
 {
     public static class DataAccessLayer
     {
@@ -9,6 +9,7 @@ namespace MSSQLDataBase
         public static string DataBase { get; set; } = "ispp3113";
         public static string Login { get; set; } = "ispp3113";
         public static string Password { get; set; } = "3113";
+
         public static string ConnectionString
         {
             get
@@ -86,11 +87,8 @@ namespace MSSQLDataBase
                 connection.Open();
 
                 SqlCommand command = new(query, connection);
-
                 DataTable dataTable = new();
-
                 using var adapter = new SqlDataAdapter(query, connection);
-
                 adapter.Fill(dataTable);
 
                 return dataTable;

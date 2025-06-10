@@ -1,4 +1,4 @@
-﻿namespace MSSQLDataBase
+﻿namespace LabWork46Library
 {
     public class Game
     {

@@ -39,6 +39,7 @@ namespace Task3
             sb.AppendLine(PasswordTextBox.Text);
             sb.AppendLine(EmailTextBox.Text);
             File.WriteAllText("userData.txt", sb.ToString());
+            MessageBox.Show("Данные сохранены");
         }
     }
 }
