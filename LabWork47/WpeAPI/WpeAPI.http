@@ -1,0 +1,6 @@
+@WpeAPI_HostAddress = http://localhost:5177
+
+GET {{WpeAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
