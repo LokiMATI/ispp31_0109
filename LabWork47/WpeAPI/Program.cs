@@ -1,6 +1,5 @@
 using DataBaseLibrary.DatabaseConnections;
 using DataBaseLibrary.Repositories;
-using System.Runtime.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
