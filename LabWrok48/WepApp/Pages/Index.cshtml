@@ -5,12 +5,13 @@
 }
 
 <h1>Список игр</h1>
-<table class="btn btn-group">
+<table>
     <thead>
         <tr>
             <th>Название</th>
             <th>Цена</th>
             <th>Подробнее</th>
+            <th>Удалить</th>
         </tr>
     </thead>
     <tbody>
@@ -20,10 +21,14 @@
                 <td>@game.Title</td>
                 <td>@game.Price</td>
                 <td>
-                    <form>
+                    <form asp-page-handler="Details">
                         <input type="hidden" name="id" value="@game.Id" />
-                        <button type="submit" class="btn btn-primary" asp-page-handler="RedirectToMoreAboutGame">Подробнее</button>
-                        <button type="submit" class="btn btn-primary" asp-page-handler="DeleteGame">Удалить</button>
+                        <button type="submit" class="btn btn-primary">Подробнее</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-page-handler="Delete">
+                        <button type="submit" class="btn btn-primary" asp-route-id="@game.Id">Удалить</button>
                     </form>
                 </td>
             </tr>

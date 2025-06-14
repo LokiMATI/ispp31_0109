@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIServices", "APIServices\APIServices.csproj", "{31AE76E5-B139-4F4F-A227-463919D18E0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiServices", "APIServices\ApiServices.csproj", "{31AE76E5-B139-4F4F-A227-463919D18E0A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseLibrary", "..\LabWork47\DataBaseLibrary\DataBaseLibrary.csproj", "{12CB0633-A407-447F-BA47-C388CBC9E5AF}"
 EndProject

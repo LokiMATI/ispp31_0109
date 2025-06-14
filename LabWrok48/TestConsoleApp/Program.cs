@@ -1,4 +1,4 @@
-﻿using APIServices.Services;
+﻿using ApiServices.Services;
 
 try
 {
@@ -10,15 +10,15 @@ try
     var game = await service.GetGameByIdAsync(5);
     game = new()
     {
-        Id = 13,
+        Id = 15,
         Title = "Тестовая запись",
         Description = "Тестовое описание",
         Price = 10,
         PublicationYear = 100
     };
-    await service.CreateGameAsync(game);
-    game.Description = "Измённйное тестовое описание.";
-    //await service.UpdateGameAsync(game);
+    //await service.CreateGameAsync(game);
+    //game.Description = "Измённйное тестовое описание.";
+    await service.UpdateGameAsync(game);
     //await service.DeleteGameAsync(13);
 }
 catch (Exception e)

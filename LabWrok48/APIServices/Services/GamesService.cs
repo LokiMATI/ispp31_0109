@@ -1,7 +1,7 @@
-﻿using APIServices.Models;
+﻿using ApiServices.Models;
 using System.Net.Http.Json;
 
-namespace APIServices.Services;
+namespace ApiServices.Services;
 
 public class GamesService(HttpClient httpClient)
 {
@@ -29,14 +29,14 @@ public class GamesService(HttpClient httpClient)
 
     public async Task CreateGameAsync(Game game)
     {
-        var response = await _httpClient.PostAsJsonAsync<Game>("/Games", game);
+        var response = await _httpClient.PostAsJsonAsync("/Games", game);
 
         await CheckConnection(response);
     }
 
     public async Task UpdateGameAsync(Game game)
     {
-        var response = await _httpClient.PutAsJsonAsync<Game>("/Games", game);
+        var response = await _httpClient.PutAsJsonAsync("/Games", game);
 
         await CheckConnection(response);
     }

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseLibrary", "DataBaseLibrary\DataBaseLibrary.csproj", "{B80BC002-622E-4E69-812B-6545093CADEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseLibrary", "DataBaseLibrary\DataBaseLibrary.csproj", "{B80BC002-622E-4E69-812B-6545093CADEC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClientApp", "TestClientApp\TestClientApp.csproj", "{44A7FE5E-5362-4626-90D2-15D280188B2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClientApp", "TestClientApp\TestClientApp.csproj", "{44A7FE5E-5362-4626-90D2-15D280188B2D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WpeAPI\WebAPI.csproj", "{C23C72FB-8093-440A-8170-F799ECEC65CC}"
 EndProject

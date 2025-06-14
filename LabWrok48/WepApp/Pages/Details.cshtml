@@ -1,19 +1,18 @@
 ﻿@page "{id}"
-@model WebApp.Pages.MoreAboutGameModel
+@model WebApp.Pages.DetailsModel
 @{
 }
 
 <div>
-    @if (Model.Game is null)
+    @if (Model.Game is not null)
     {
-        <form>
+        <form asp-page-handler="Update">
+            <input type="hidden" name="id" value="@Model.Game.Id"/>
             <p>Название: <input type="text" name="title" value="@Model.Game.Title" /></p>
             <p>Год выпуска: <input type="text" name="publicationYear" value="@Model.Game.PublicationYear" /></p>
             <p>Стоимость: <input type="text" name="price" value="@Model.Game.Price" /></p>
-            @if (Model.Game.Description is not null)
-            {
-                <p>Описание: <input type="text" name="price" value="@Model.Game.Price" /></p>
-            }
+            <p>Описание: <input type="text" name="description" value="@Model.Game.Description" /></p>
+            <button type="submit">Сохранить</button>
         </form>
     }
     else

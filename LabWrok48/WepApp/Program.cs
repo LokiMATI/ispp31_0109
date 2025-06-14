@@ -1,4 +1,4 @@
-using APIServices.Services;
+using ApiServices.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ builder.Services.AddRazorPages();
 HttpClient httpClient = new();
 httpClient.BaseAddress = new Uri("http://localhost:5177");
 
-builder.Services.AddSingleton<HttpClient>(httpClient);
+builder.Services.AddSingleton(httpClient);
 builder.Services.AddScoped<GamesService>();
 
 var app = builder.Build();

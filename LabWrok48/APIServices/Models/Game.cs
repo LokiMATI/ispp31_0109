@@ -1,4 +1,4 @@
-﻿namespace APIServices.Models;
+﻿namespace ApiServices.Models;
 
 public class Game
 {

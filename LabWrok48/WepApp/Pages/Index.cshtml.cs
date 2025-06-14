@@ -1,5 +1,5 @@
-using APIServices.Models;
-using APIServices.Services;
+using ApiServices.Models;
+using ApiServices.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -23,15 +23,22 @@ namespace WepApp.Pages
             }
         }
 
-        public IActionResult OnPostRedirectToMoreAboutGame(int id)
+        public IActionResult OnPostDetails(int id)
         {
-            return RedirectToPage("/MoreAboutGame", new { id });
+            return RedirectToPage("./Details", new { id });
         }
 
-        public async Task OnPostDeleteGame(int id)
+        public async Task OnPostDeleteAsync(int id)
         {
-            await _service.DeleteGameAsync(id);
-            await OnGet();
+            try
+            {
+                await _service.DeleteGameAsync(id);
+                RedirectToPage();
+            }
+            catch (Exception)
+            {
+                RedirectToPage();
+            }
         }
     }
 }
