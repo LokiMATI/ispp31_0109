@@ -1,10 +1,23 @@
-﻿@page
+﻿@page "{id}"
 @model WebApp.Pages.MoreAboutGameModel
 @{
 }
 
 <div>
-    <form>
-
-    </form>
+    @if (Model.Game is null)
+    {
+        <form>
+            <p>Название: <input type="text" name="title" value="@Model.Game.Title" /></p>
+            <p>Год выпуска: <input type="text" name="publicationYear" value="@Model.Game.PublicationYear" /></p>
+            <p>Стоимость: <input type="text" name="price" value="@Model.Game.Price" /></p>
+            @if (Model.Game.Description is not null)
+            {
+                <p>Описание: <input type="text" name="price" value="@Model.Game.Price" /></p>
+            }
+        </form>
+    }
+    else
+    {
+        <p>Игра не была найдена.</p>
+    }
 </div>

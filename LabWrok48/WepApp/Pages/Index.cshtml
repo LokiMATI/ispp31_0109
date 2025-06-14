@@ -4,23 +4,26 @@
     ViewData["Title"] = "Home page";
 }
 
-<table>
-    <caption>Список игр</caption>
+<h1>Список игр</h1>
+<table class="btn btn-group">
     <thead>
         <tr>
-            <th>Название</th> <th>Цена</th> <th>Подробнее</th>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Подробнее</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var game in Model._games)
+        @foreach (var game in Model.Games)
         {
             <tr>
                 <td>@game.Title</td>
                 <td>@game.Price</td>
                 <td>
-                    <form asp-page="/MoreAboutGame">
-                        <input type="hidden" name="id" value="@game.Id"/>
-                        <button type="submit" class="btn btn-primary">Подробнее</button>
+                    <form>
+                        <input type="hidden" name="id" value="@game.Id" />
+                        <button type="submit" class="btn btn-primary" asp-page-handler="RedirectToMoreAboutGame">Подробнее</button>
+                        <button type="submit" class="btn btn-primary" asp-page-handler="DeleteGame">Удалить</button>
                     </form>
                 </td>
             </tr>

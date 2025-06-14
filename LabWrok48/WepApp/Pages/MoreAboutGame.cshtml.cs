@@ -13,7 +13,13 @@ namespace WebApp.Pages
 
         public async Task OnPost(int id)
         {
-            Game = await _service.GetGameByIdAsync(id);
+            try
+            {
+                Game = await _service.GetGameByIdAsync(id);
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

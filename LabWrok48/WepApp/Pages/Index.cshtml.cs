@@ -1,5 +1,6 @@
 using APIServices.Models;
 using APIServices.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WepApp.Pages
@@ -8,11 +9,29 @@ namespace WepApp.Pages
     {
         private readonly GamesService _service = service;
 
-        public IEnumerable<Game> _games;
+        public IEnumerable<Game> Games;
 
         public async Task OnGet()
         {
-            _games = await _service.GetGamesAsync();
+            try
+            {
+                Games = await _service.GetGamesAsync();
+            }
+            catch (Exception)
+            {
+                Games = new List<Game>();
+            }
+        }
+
+        public IActionResult OnPostRedirectToMoreAboutGame(int id)
+        {
+            return RedirectToPage("/MoreAboutGame", new { id });
+        }
+
+        public async Task OnPostDeleteGame(int id)
+        {
+            await _service.DeleteGameAsync(id);
+            await OnGet();
         }
     }
 }
