@@ -1,0 +1,32 @@
+﻿<Window x:Class="Task3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas>
+        <Canvas.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF81FF53" Offset="0.54"/>
+                <GradientStop Color="#FF5BEDFF" Offset="0.516"/>
+                <GradientStop Color="#FF5850F7"/>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <Rectangle Height="100" Canvas.Left="194" Stroke="Black" Canvas.Top="167" Width="412" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="#FF387017"/>
+        <Ellipse Height="103" Canvas.Left="231" Stroke="Black" Canvas.Top="217" Width="102" Fill="Black"/>
+        <Ellipse Height="103" Canvas.Left="460" Stroke="Black" Canvas.Top="217" Width="102" HorizontalAlignment="Left" VerticalAlignment="Center" Fill="Black"/>
+        <Rectangle Height="95" Canvas.Left="194" Stroke="Black" Canvas.Top="72" Width="270" Fill="#FFABFF87"/>
+        <Polygon Points="464, 167, 464, 72, 606, 167">
+            <Polygon.Fill>
+                <LinearGradientBrush EndPoint="1, 0.5" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3378F9"/>
+                    <GradientStop Color="#FFB2CDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Polygon.Fill>
+        </Polygon>
+        <Line X1="415" Y1="40" X2="450" Y2="72" Stroke="Black" StrokeThickness="4"/>
+    </Canvas>
+</Window>

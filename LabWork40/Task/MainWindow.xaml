@@ -1,0 +1,81 @@
+﻿<Window x:Class="Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel>
+            <Ellipse Height="100" Width="100" Fill="Black"/>
+            <Ellipse Height="100" Width="100">
+                <Ellipse.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="100" Width="100">
+                <Ellipse.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </RadialGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Ellipse Height="100" Width="100" Stroke="Black"  StrokeThickness="2" StrokeDashArray="2 2">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/Minecraft.png" TileMode="None" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </StackPanel>
+
+        <StackPanel>
+            <Rectangle Height="100" Width="100" Stroke="Black" StrokeThickness="10" Fill="#FF34FF03"/>
+            <Rectangle Height="100" Width="100" Stroke="Black" StrokeThickness="10" RadiusY="5" RadiusX="5">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="100" Width="100" Stroke="Black" StrokeThickness="10">
+                <Rectangle.Fill>
+                    <RadialGradientBrush>
+                        <GradientStop Color="Black" Offset="1"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </RadialGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Height="100" Width="100" Stroke="Black" StrokeThickness="10">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/Minecraft.png" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </StackPanel>
+
+        <StackPanel>
+            <Rectangle Height="100" Width="100" Stroke="Black" StrokeThickness="10" Fill="#FF34FF03">
+                <Rectangle.RenderTransform>
+                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Height="100" Width="100" Stroke="Black" StrokeThickness="10" Fill="#FF34FF03">
+                <Rectangle.RenderTransform>
+                    <RotateTransform Angle="-45" CenterX="100" CenterY="50"/>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle Height="100" Width="100" Stroke="Black" StrokeThickness="10" Fill="#FF34FF03">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                        <RotateTransform Angle="-45" CenterX="100" CenterY="50"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </StackPanel>
+    </StackPanel>
+</Window>
