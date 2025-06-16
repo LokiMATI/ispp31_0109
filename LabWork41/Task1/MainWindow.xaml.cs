@@ -17,6 +17,8 @@ namespace Task1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int _menuWidth = 80;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -25,8 +27,7 @@ namespace Task1
         private void OpenMenuButton_Click(object sender, RoutedEventArgs e)
         {
             DoubleAnimation animation = new();
-            animation.From = Menu.Width;
-            animation.To = Menu.Width > 0 ? 0 : 80;
+            animation.To = Menu.Width > 0 ? 0 : _menuWidth;
             animation.Duration = TimeSpan.FromSeconds(1);
             Menu.BeginAnimation(Menu.WidthProperty, animation);
         }

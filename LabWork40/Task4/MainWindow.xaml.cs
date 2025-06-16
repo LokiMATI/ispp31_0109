@@ -27,16 +27,16 @@ namespace Task4
                 Ellipse circle = new();
 
                 circle.Width = circle.Height = Random.Shared.Next(10, 50);
-                circle.Fill = new SolidColorBrush(Color.FromRgb((byte)Random.Shared.Next(0, 256),
-                    (byte)Random.Shared.Next(0, 256),
-                    (byte)Random.Shared.Next(0, 256)));
+                circle.Fill = new SolidColorBrush(Color.FromRgb((byte)Random.Shared.Next(256),
+                    (byte)Random.Shared.Next(256),
+                    (byte)Random.Shared.Next(256)));
 
                 circle.Tag = _tags[Random.Shared.Next(_tags.Length)];
 
                 Canvas.Children.Add(circle);
 
-                Canvas.SetTop(circle, Random.Shared.Next((int)(Canvas.Height - circle.Height)));
-                Canvas.SetLeft(circle, Random.Shared.Next((int)(Canvas.Width - circle.Width)));
+                Canvas.SetTop(circle, e.GetPosition(Canvas).Y - circle.Height / 2);
+                Canvas.SetLeft(circle, e.GetPosition(Canvas).X - circle.Width / 2);
             }
             else if (e.Source is Ellipse ellipse)
             {

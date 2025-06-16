@@ -1,0 +1,17 @@
+﻿<Window x:Class="Task3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <MediaElement Source="C:\Users\0109-13\Videos\2024-06-05 15-12-08.mkv" Width="800" Height="300"/>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="FirstSoundButton" Content="Первый звук" Click="FirstSoundButton_Click"/>
+            <Button x:Name="SecondSoundButton" Content="Второй звук" Click="SecondSoundButton_Click"/>
+            <Button x:Name="ThirdSoundButton" Content="Третий звук" Click="ThirdSoundButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
