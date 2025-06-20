@@ -52,7 +52,7 @@ switch (register)
 
 
     case 3:
-        StringBuilder inputStringBuilder = new StringBuilder();
+        StringBuilder inputStringBuilder = new();
         foreach (char symbol in inputString)
             if (Char.IsLower(symbol))
                 inputStringBuilder.Append(Char.ToUpper(symbol));

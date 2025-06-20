@@ -6,6 +6,6 @@
 
     public override string ToString()
     {
-        return String.Format("{0};{1:000000000};{2:yyyy/MM/dd}", FullName, PolicyNumber, BirthDate);
+        return String.Format("{0};{1:D9};{2:yyyy/MM/dd}", FullName, PolicyNumber, BirthDate);
     }
 }
