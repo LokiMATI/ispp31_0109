@@ -6,7 +6,7 @@ SET Price = ROUND(Price, -1);
 SELECT YEAR(OrderDate) Год, MONTH(OrderDate) Месяц, COUNT(*) Количество
 FROM [Order]
 GROUP BY YEAR(OrderDate), MONTH(OrderDate)
-ORDER BY YEAR(OrderDate), MONTH(OrderDate) DESC;
+ORDER BY YEAR(OrderDate) DESC, MONTH(OrderDate) DESC;
 
 -- Задание 3
 UPDATE Book
@@ -15,10 +15,10 @@ WHERE BookId IN (SELECT b.BookId
 					FROM Book b
 						LEFT JOIN OrderedBook ob ON b.BookId = ob.BookId
 						JOIN [Order] o ON ob.OrderId = o.OrderId
-					WHERE YEAR(PublicationYear) != YEAR(GETDATE()) OR PublicationYear IS NULL);
+					WHERE YEAR(OrderDate) != YEAR(GETDATE()) OR OrderDate IS NULL);
 
 -- Задание 4
-SELECT CustomerId, UPPER(Surname) + ' ' + UPPER(LEFT(LTRIM([Name]), 1)) + '.'
+SELECT CustomerId, UPPER(Surname + ' ' + LEFT(LTRIM([Name]), 1)) + '.'
 FROM Customer;
 
 -- Задание 5
@@ -31,11 +31,26 @@ SELECT
 	[Login], 
 	Surname,
 	[Name],
-	CASE WHEN TRIM([Address]) != '' THEN [Address] ELSE NULL END [Address], 
-	CASE WHEN Phone IS NULL THEN '-' ELSE Phone END Phone
+	NULLIF(TRIM([Address]), '') [Address], 
+	ISNULL(Phone, '-') Phone
 FROM Customer;
 
 -- Задание 7
-SELECT  DISTINCT Title
+SELECT  DISTINCT AuthorId, STRING_AGG(Title, ';') WITHIN GROUP (ORDER BY Title)
 FROM Book
-GROUP BY BookId, Title
+GROUP BY AuthorId;
+
+-- Задание 8
+SELECT STRING_AGG(CONCAT(Surname, ' ', [Name], ' ', Title), '; ')
+FROM OrderedBook ob
+	JOIN Book b ON ob.BookId = b.BookId
+	JOIN Author a ON b.AuthorId = a.AuthorId
+GROUP BY OrderId;
+
+-- Задание 9
+SELECT ROW_NUMBER() OVER (ORDER BY Title) AS #, Title
+FROM Book;
+
+-- Задание 10
+SELECT ROW_NUMBER() OVER (PARTITION BY Genre ORDER BY Title) AS #, Genre, Title
+FROM Book;
