@@ -1,5 +1,4 @@
 ﻿// Задание 1
-using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 
 string pattern = @"^(\+7|8)\(9\d{2}\)\d{3}-\d{2}-\d{2}$";

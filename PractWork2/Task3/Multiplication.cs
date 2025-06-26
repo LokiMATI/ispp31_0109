@@ -35,8 +35,6 @@ namespace Task3
 
             var renge = workSheet.Range[workSheet.Cells[2, 2], workSheet.Cells[9, 9]].Cut();
 
-            var work
-
             workbook.SaveAs("Таблица умножения.xlsx");
             application.Quit();
         }
